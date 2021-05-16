@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">E-Cart</string>
+
+    <string name="price_condition">* Prices are bound to change according to time</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="your_previous_orders">Your Previous Orders</string>
+    <string name="place_your_order">Place your order</string>
+    <string name="userName">Username</string>
+    <string name="password">Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="signIn">Sign In</string>
+    <string name="login">Login</string>
+    <string name="addAccount">Add Account</string>
+    <string name="registerUser">Register User</string>
+    <string name="register">Register</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="checkOut">Checkout</string>
+    <string name="checkOrders">Check your orders</string>
+    <string name="addItem">Add Item</string>
+    <string name="add">Add</string>
+    <string name="name">Name</string>
+    <string name="variant">Variant</string>
+    <string name="price">Price</string>
+    <string name="inventory">Inventory</string>
+    <string name="addUser">Add User</string>
+    <string name="admin">Admin</string>
+</resources>

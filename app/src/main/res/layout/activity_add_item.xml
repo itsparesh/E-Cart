@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp" >
+
+    <TextView
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="@string/addItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/itemNameET"
+        android:hint="@string/name"
+        android:layout_margin="16dp"
+        android:inputType="text"
+        android:maxLength="12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="no" />
+
+    <EditText
+        android:id="@+id/variantET"
+        android:hint="@string/variant"
+        android:layout_margin="16dp"
+        android:inputType="text"
+        android:maxLength="12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="no" />
+
+    <EditText
+        android:id="@+id/priceET"
+        android:hint="@string/price"
+        android:layout_margin="16dp"
+        android:inputType="number"
+        android:maxLength="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="no" />
+
+    <EditText
+        android:id="@+id/inventoryET"
+        android:hint="@string/inventory"
+        android:layout_margin="16dp"
+        android:inputType="number"
+        android:maxLength="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="no" />
+
+    <Button
+        android:id="@+id/addBtnET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/add"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
