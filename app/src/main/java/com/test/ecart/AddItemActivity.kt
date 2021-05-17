@@ -12,10 +12,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class AddItemActivity : AppCompatActivity() {
+    private var isData: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)
         setOnClickListener()
+        if (!intent?.getStringExtra("itemName").isNullOrBlank()) {
+            isData = true
+            addBtnET?.text = getString(R.string.update)
+            itemNameET?.setText(intent?.getStringExtra("itemName"))
+        }
     }
 
     private fun setOnClickListener() {
@@ -50,13 +56,21 @@ class AddItemActivity : AppCompatActivity() {
                 item.inventory = inventory
                 itemDB.itemDao?.insert(item)
                 runOnUiThread {
-                    Toast.makeText(this@AddItemActivity, "Item Added", Toast.LENGTH_SHORT).show()
+                    if (isData) {
+                        Toast.makeText(this@AddItemActivity, "Item Updated", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this@AddItemActivity, "Item Added", Toast.LENGTH_SHORT).show()
+                    }
                     finish()
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
                 runOnUiThread {
-                    Toast.makeText(this@AddItemActivity, "Item Addition Failed", Toast.LENGTH_SHORT).show()
+                    if (isData) {
+                        Toast.makeText(this@AddItemActivity, "Item Update Failed", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this@AddItemActivity, "Item Addition Failed", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }

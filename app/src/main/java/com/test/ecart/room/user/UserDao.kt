@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.test.ecart.room.cart.Cart
 
 @Dao
 interface UserDao {
@@ -19,6 +20,8 @@ interface UserDao {
     @Query("SELECT EXISTS (SELECT 1 FROM User WHERE userName = :userName)")
     fun userNameExists(userName: String?): Boolean
 
+    @Query("SELECT * FROM User")
+    fun getAllUsers(): List<User>?
     companion object {
         const val USER = 0
         const val ADMIN = 1

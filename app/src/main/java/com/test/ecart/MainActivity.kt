@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val header = navigationView?.getHeaderView(0)
         val navName = header?.findViewById<TextView>(R.id.userName)
         val userType = header?.findViewById<TextView>(R.id.userType)
-        navName?.text = password
+        navName?.text = userName
         userType?.text = userName
         val toggle = ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -55,15 +55,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mItemDB = getDatabase(this)
 
         // Database population should occur only once that is when the app is opened first
-        DatabaseAsync().insertData()
-        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        //val preferences = PreferenceManager.getDefaultSharedPreferences(this)
         /*if (!preferences.getBoolean("firstTime", false)) {
             DatabaseAsync().insertData()
             val editor = preferences.edit()
             editor.putBoolean("firstTime", true)
             editor.apply()
         }*/
-        QueryDB().getData()
+        CoroutineScope(Dispatchers.IO).launch {
+            DatabaseAsync().insertData()
+            QueryDB().getData()
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

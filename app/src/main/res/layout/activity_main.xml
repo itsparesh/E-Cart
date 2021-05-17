@@ -30,7 +30,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:title="Ecommerce"/>
+                app:title="E-Cart"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -60,9 +60,7 @@
                     android:id="@+id/productsList"
                     android:layout_below="@id/place_order_text"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="match_parent"/>
 
             </RelativeLayout>
 

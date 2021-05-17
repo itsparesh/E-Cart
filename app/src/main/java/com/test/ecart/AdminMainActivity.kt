@@ -20,5 +20,11 @@ class AdminMainActivity : AppCompatActivity() {
         addItemBtnET?.setOnClickListener {
             startActivity(Intent(this, AddItemActivity::class.java))
         }
+        editUsersBtnET?.setOnClickListener {
+            startActivity(Intent(this, UserListActivity::class.java))
+        }
+        editItemsBtnET?.setOnClickListener {
+            startActivity(Intent(this, ItemActivity::class.java))
+        }
     }
 }

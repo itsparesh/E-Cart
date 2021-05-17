@@ -12,10 +12,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class RegistrationActivity : AppCompatActivity() {
+    private var isData: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
         setOnClickListener()
+        if (!intent?.getStringExtra("userName").isNullOrBlank()) {
+            isData = true
+            registerButtonET?.text = getString(R.string.update)
+            userNameET?.setText(intent?.getStringExtra("userName"))
+        }
     }
 
     private fun setOnClickListener() {
@@ -53,13 +59,21 @@ class RegistrationActivity : AppCompatActivity() {
                 }
                 userDB.userDao?.insert(user)
                 runOnUiThread {
-                    Toast.makeText(this@RegistrationActivity, "User Registered", Toast.LENGTH_SHORT).show()
+                    if (isData) {
+                        Toast.makeText(this@RegistrationActivity, "User Updated", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this@RegistrationActivity, "User Registered", Toast.LENGTH_SHORT).show()
+                    }
                     finish()
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
                 runOnUiThread {
-                    Toast.makeText(this@RegistrationActivity, "User Registration Failed", Toast.LENGTH_SHORT).show()
+                    if (isData) {
+                        Toast.makeText(this@RegistrationActivity, "User Update Failed", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this@RegistrationActivity, "User Registration Failed", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
@@ -73,7 +87,12 @@ class RegistrationActivity : AppCompatActivity() {
                 addUser(userName, password)
             } else {
                 runOnUiThread {
-                    Toast.makeText(this@RegistrationActivity, "User already exists", Toast.LENGTH_SHORT).show()
+                    if (isData) {
+                        Toast.makeText(this@RegistrationActivity, "Same user details", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this@RegistrationActivity, "User already exists", Toast.LENGTH_SHORT).show()
+                    }
+
                 }
             }
         }

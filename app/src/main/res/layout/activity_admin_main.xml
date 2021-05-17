@@ -34,4 +34,22 @@
         android:text="@string/addItem"
         android:textColor="@android:color/white" />
 
+    <Button
+        android:id="@+id/editUsersBtnET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/editUsers"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/editItemsBtnET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/editItems"
+        android:textColor="@android:color/white" />
+
 </LinearLayout>

@@ -25,4 +25,8 @@
     <string name="inventory">Inventory</string>
     <string name="addUser">Add User</string>
     <string name="admin">Admin</string>
+    <string name="user">User</string>
+    <string name="update">Update</string>
+    <string name="editUsers">Edit Users</string>
+    <string name="editItems">Edit Items</string>
 </resources>

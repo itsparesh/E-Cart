@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:fontFamily="monospace"
+        android:visibility="gone"
         tools:text="User"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 

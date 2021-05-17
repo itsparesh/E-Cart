@@ -13,7 +13,7 @@ class User: Serializable {
     @ColumnInfo(name = "password")
     var password: String? = null
     @ColumnInfo(name = "type")
-    var type: Int = UserDao.ADMIN
+    var type: Int = UserDao.USER
     @ColumnInfo(name = "sNo")
     var sNo = 0
     @ColumnInfo(name = "name")
