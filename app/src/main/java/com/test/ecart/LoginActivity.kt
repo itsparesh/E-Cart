@@ -93,6 +93,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun addInitialItems() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
